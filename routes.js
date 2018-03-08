@@ -2,6 +2,7 @@ var TodoController            = require('./controllers/todos'),
     AuthController            = require('./controllers/auth'),
     ArtistController          = require('./controllers/artist'),
     AlbumController           = require('./controllers/album'),
+    SongController            = require('./controllers/songs'),
     express                   = require('express'),
     passport                  = require('passport');
 
@@ -37,6 +38,11 @@ module.exports = function(app){
     apiRoutes.use('/albums', albumRoutes);
     albumRoutes.get('/', AlbumController.getAlbums);
     albumRoutes.post('/', AlbumController.createAlbum);
+
+    //Album routes
+    apiRoutes.use('/songs', songRoutes);
+    albumRoutes.get('/', SongController.getSongs);
+    albumRoutes.post('/', SongController.createSong);
 
     // Set up routes
     app.use('/v1', apiRoutes);
