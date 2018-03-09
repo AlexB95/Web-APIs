@@ -7,9 +7,7 @@ var ArtistSchema = new mongoose.Schema({
         required: true
     },
     duration: String,
-    _artist: { type: mongoose.Schema.Types.ObjectId, ref: 'Artist'},
-    _album: { type: mongoose.Schema.Types.ObjectId, ref: 'Album'}
-
+    _album: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Album'}]
 }, {
     timestamps: true
 });

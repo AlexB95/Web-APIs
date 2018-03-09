@@ -1,5 +1,5 @@
-module.exports = function(){
-  switch(process.env.NODE_ENV){
+module.exports = function(env){
+  switch(env){
     case 'local':
       return{
         'url': 'mongodb://localhost:27017/MyMusic',

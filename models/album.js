@@ -12,7 +12,7 @@ var AlbumSchema = new mongoose.Schema({
       }
     ],
     releaseDate: String,
-    _artist: { type: mongoose.Schema.Types.ObjectId, ref: 'Artist'}
+    _artist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Artist'}]
 
 }, {
     timestamps: true

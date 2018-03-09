@@ -77,9 +77,9 @@ exports.createAlbum = function(req, res, next){
 exports.deleteAlbum = function(req, res, next){
 
     Album.remove({
-        _id : req.params.Album_id
-    }, function(err, Album) {
-        res.json(Album);
+        _id : req.params.album_id
+    }, function(err, album) {
+        res.json({'id':req.params.album_id, 'albums': album});
     });
 
 }

@@ -15,6 +15,7 @@ module.exports = function(app){
         authRoutes    = express.Router(),
         artistRoutes  = express.Router(),
         albumRoutes   = express.Router(),
+        songRoutes    = express.Router(),
         todoRoutes    = express.Router();
 
     // Auth Routes
@@ -33,16 +34,19 @@ module.exports = function(app){
     apiRoutes.use('/artists', artistRoutes);
     artistRoutes.get('/', ArtistController.getArtists);
     artistRoutes.post('/', ArtistController.createArtist);
+    artistRoutes.delete('/:artist_id', ArtistController.deleteArtist);
 
     //Album routes
     apiRoutes.use('/albums', albumRoutes);
     albumRoutes.get('/', AlbumController.getAlbums);
     albumRoutes.post('/', AlbumController.createAlbum);
+    albumRoutes.delete('/:album_id', AlbumController.deleteAlbum);
 
     //Album routes
     apiRoutes.use('/songs', songRoutes);
-    albumRoutes.get('/', SongController.getSongs);
-    albumRoutes.post('/', SongController.createSong);
+    songRoutes.get('/', SongController.getSongs);
+    songRoutes.post('/', SongController.createSong);
+    songRoutes.delete('/:song_id', SongController.deleteSong);
 
     // Set up routes
     app.use('/v1', apiRoutes);
