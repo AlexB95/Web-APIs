@@ -42,7 +42,7 @@ module.exports = function(app){
     albumRoutes.post('/', AlbumController.createAlbum);
     albumRoutes.delete('/:album_id', AlbumController.deleteAlbum);
 
-    //Album routes
+    //Song routes
     apiRoutes.use('/songs', songRoutes);
     songRoutes.get('/', SongController.getSongs);
     songRoutes.post('/', SongController.createSong);
