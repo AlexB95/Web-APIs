@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var ArtistSchema = new mongoose.Schema({
+var SongSchema = new mongoose.Schema({
 
     title: {
         type: String,
@@ -12,4 +12,4 @@ var ArtistSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Song', ArtistSchema);
+module.exports = mongoose.model('Song', SongSchema);
